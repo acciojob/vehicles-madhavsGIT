@@ -20,6 +20,10 @@ public class Vehicle {
         return currentSpeed;
     }
 
+    public void setCurrentSpeed(int currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
     public int getCurrentDirection() {
         return currentDirection;
     }
