@@ -1,7 +1,7 @@
 package com.driver;
 
 public class F1 extends Car {
-
+    private int currentSpeed;
     public F1(String name, boolean isManual) {
         //Use arbitrary values for parameters which are not mentioned
         super(name, 4, 0, 6, isManual, "F1", 1);
@@ -22,6 +22,10 @@ public class F1 extends Car {
         return super.getCurrentGear();
     }
 
+    public void setCurrentSpeed(int newSpeed) {
+        this.currentSpeed = newSpeed;
+    }
+
     @Override
     public int getCurrentSpeed() {
         return super.getCurrentSpeed();
@@ -31,6 +35,7 @@ public class F1 extends Car {
     public int getCurrentDirection() {
         return super.getCurrentDirection();
     }
+
 
     public void accelerate(int rate){
         int newSpeed = 0; //set the value of new speed by using currentSpeed and rate
@@ -49,20 +54,25 @@ public class F1 extends Car {
         if (newSpeed <= 0) {
             stop();
             changeGear(1);
-        } else if (newSpeed <= 50 || newSpeed>=1) {
+        } else if (newSpeed <= 50) {
             changeGear(1);
-        } else if (newSpeed <= 100 || newSpeed >= 51) {
+        } else if (newSpeed <= 100) {
             changeGear(2);
-        } else if (newSpeed <= 150 || newSpeed >= 101) {
+        } else if (newSpeed <= 150) {
             changeGear(3);
-        } else if (newSpeed <= 200 || newSpeed >= 151) {
+        } else if (newSpeed <= 200) {
             changeGear(4);
-        } else if (newSpeed <= 250 || newSpeed >= 201) {
+        } else if (newSpeed <= 250) {
             changeGear(5);
         } else {
             changeGear(6);
         }
 
+        // Update the current speed with the new speed
+        setCurrentSpeed(newSpeed);
+
 
     }
+
+
 }
