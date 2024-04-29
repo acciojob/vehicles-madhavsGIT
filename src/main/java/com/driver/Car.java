@@ -21,6 +21,49 @@ public class Car extends Vehicle {
         this.currentGear=1;
     }
 
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    public boolean isManual() {
+        return isManual;
+    }
+
+    public int getDoors() {
+        return doors;
+    }
+
+    public int getCurrentGear() {
+        return currentGear;
+    }
+
+    public int getGears() {
+        return gears;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public int getWheels() {
+        return wheels;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public int getCurrentDirection() {
+        return super.getCurrentDirection();
+    }
+
+    @Override
+    public int getCurrentSpeed() {
+        return super.getCurrentSpeed();
+    }
+
     public void changeGear(int newGear){
             this.currentGear = newGear;
         System.out.println("changeGear method called - The gear is changed to: " + currentGear);
